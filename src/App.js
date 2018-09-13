@@ -1,66 +1,78 @@
 import React from "react";
-import Cards from "./Cards";
+import Trending from "./components/Trending"
+import MovieSearch from "./components/MovieSearch"
+import { Link } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
+import MovieDetails from "./components/MovieDetails";
+import {withRouter} from 'react-router-dom';
+
 
 class App extends React.Component {
 	constructor(){
 		super();
 		this.state ={
 			value: '',
-			omdbdata: []
+			testsubmit:''
 		
 		}
+		this.input = React.createRef();
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 
 		}
 
 			handleChange(e){
-			this.setState({value: e.target.value});
+			this.setState({value: e.target.value})
 			}
 
 			handleSubmit(e){
-				e.preventDefault();
-				let endpoint = 'http://www.omdbapi.com/?apikey=f90715be&s=' +this.state.value + '&r=json';
-				fetch(endpoint)
-				.then(response=>{
-					return response.json();
-					
-				}
-				)
-				.then(data=>{
-					let title = data["Search"].map((res, index)=>{
-						return(
-							<div key={index} className='cards'>
-								<img src={res["Poster"]}/>
-								{res["Title"]}
-							</div>
-							)
-						})
-					console.log(title);
-					
-					this.setState({
-						omdbdata: title
-					});
-				
-				})
+			e.preventDefault()
+			this.setState(
+			{
+				testsubmit: this.state.value
+			},
+			() => {this.props.history.push(`/resultPage/${this.state.testsubmit}`)}
+			);
+			
 			}
 
-
 			
-	
 
 	render(){
 		return(
 			<div>
 			<div className='header'>
-			<h1>title </h1>
-			<form onSubmit={this.handleSubmit}>
+			<Link to='/home'>
+				<h1>FilmDB</h1>
+			</Link>
+
+		
+		
+			<form type='submit' onSubmit={this.handleSubmit}>
 				<input type='text' value={this.state.value} onChange={this.handleChange}/>
-				<button type='submit'>submit</button>
+				
 
 			</form>
+		
 			</div>
-			<Cards titledata={this.state.omdbdata}/>
+					
+			
+			<Switch>
+				<Route exact path='/home' component={Trending}/>
+				
+				<Route path='/home/:movieId' component={MovieDetails}/>
+				<Route exact path={`/resultPage/${this.state.testsubmit}`} render={(props)=>
+					<MovieSearch inputProp={this.state.value} {...props} />
+
+				}/>
+			</Switch>
+			
+			
+
+
+		
+			
+			
 			</div>
 
 
@@ -69,4 +81,4 @@ class App extends React.Component {
 }
 
 
-export default App;
+export default withRouter(App);
