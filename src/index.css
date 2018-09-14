@@ -1,3 +1,8 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
 body{
 	background-color: #f5f6fa;
 	font-family: arial;
@@ -5,10 +10,44 @@ body{
 
 }
 
-.header{
-	text-align: center;
-	margin-bottom: 1em;
+.logo{
+	width: 7em;
 }
+
+.header{
+	
+
+	
+	background-color: #3498db;
+	border-bottom-right-radius: 0.5em;
+	border-bottom-left-radius: 0.5em;
+	position: fixed;
+	width:100%;
+
+
+}
+
+.headernavrow{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-end;
+	padding: 1em 1.5em 1em 1.5em;
+
+}
+
+.headernavcol{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-end;
+	padding: 1em 1.5em 1em 1.5em;
+}
+
+.container{
+	padding-top: 6em;
+}
+
 
 .cards{
 	background-color: #fff;
@@ -18,11 +57,12 @@ body{
 }
 
 .posters{
-	border-radius: 3em;
+	border-radius: 1.5em;
 	box-shadow: 0px 4px 4px 0 rgba(0,0,0,0.1);
     transition: 0.3s;
     max-width: 100%;
     margin: auto;
+    margin-bottom: 0.5em;
   	
 
 }
@@ -35,8 +75,8 @@ body{
 	background-color: #FFF;
 	padding: 3em 3em 5em 3em;
 	margin: 0.5em 1em 0.5em 1em;
-	border-radius: 1em;
-	font-family: arial;
+	border-radius: 0.5em;
+	font-family: 'arial';
 	box-shadow: 0px 4px 4px 0 rgba(0,0,0,0.1);
     transition: 0.3s;
   	text-align: center;
@@ -57,7 +97,8 @@ body{
 }
 
 .posterdetail{
-	border-radius: 1em;
+	border-radius: 0.5em;
+	max-width: 100%;
 
 }
 

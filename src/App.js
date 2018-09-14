@@ -12,13 +12,14 @@ class App extends React.Component {
 		super();
 		this.state ={
 			value: '',
-			testsubmit:''
+			testsubmit:'',
+			headcss: 'headernavrow'
 		
 		}
 		this.input = React.createRef();
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
-
+		this.handleScroll = this.handleScroll.bind(this);
 		}
 
 			handleChange(e){
@@ -36,27 +37,40 @@ class App extends React.Component {
 			
 			}
 
-			
+
+
+	compoundDidMount(){
+		window.addEventListener('scroll', this.handleScroll);
+	}
+	componentWillUnmount() {
+  		window.removeEventListener('scroll', this.handleScroll);
+	}
+
+	handleScroll(){
+
+		console.log('hello');
+	};
+
+
 
 	render(){
 		return(
 			<div>
 			<div className='header'>
+			<div className={this.state.headcss}>
 			<Link to='/home'>
-				<h1>FilmDB</h1>
+				<img src={require('./filmdblogo2.png')} className='logo'/>
 			</Link>
 
 		
 		
 			<form type='submit' onSubmit={this.handleSubmit}>
-				<input type='text' value={this.state.value} onChange={this.handleChange}/>
-				
-
+				<input type='text' value={this.state.value} onChange={this.handleChange} placeholder=' Search Movies'/>
 			</form>
-		
+			</div>
 			</div>
 					
-			
+			<div className='container'>
 			<Switch>
 				<Route exact path='/home' component={Trending}/>
 				
@@ -66,7 +80,7 @@ class App extends React.Component {
 
 				}/>
 			</Switch>
-			
+			</div>
 			
 
 

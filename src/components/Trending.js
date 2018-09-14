@@ -71,8 +71,8 @@ class Trending extends React.Component{
 		return(
 			<div>
 			
-			<div className="header">
-			<h1>Popular</h1>
+			<div>
+			<h1>Popular Films</h1>
 			
 			{this.state.trendingData}
 
