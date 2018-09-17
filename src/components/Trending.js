@@ -30,7 +30,7 @@ class Trending extends React.Component{
 				let pictures = data["results"].map((pic,index)=>{
 				return(
 					<div key={pic["id"]} >
-						<Link to={'/home/'+pic["id"].toString()}>
+						<Link to={'/FilmDB/'+pic["id"].toString()}>
 							<img className='trendingposterscss' src= {posterEndpoint + posterSize + pic["poster_path"]}/>
 						</Link>
 					</div>

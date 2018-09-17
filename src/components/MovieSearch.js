@@ -29,7 +29,7 @@ class MovieSearch extends React.Component{
 				let pictures = data["results"].map((pic,index)=>{
 				return(
 					<div key={pic["id"]}>
-						<Link to={'/home/'+pic["id"].toString()}>
+						<Link to={'/FilmDB/'+pic["id"].toString()}>
 							<img src= {posterEndpoint + posterSize + pic["poster_path"]} className="postersearchcss"/>
 						</Link>
 					</div>

@@ -17,7 +17,7 @@ class MovieDetails extends React.Component{
 
 	componentDidMount() {
 		let detailEndpoint = 'https://api.themoviedb.org/3/movie/';
-		let detailID = window.location.pathname.substring(6) + '?api_key=23df4f4dded45215846668f78df6e8e8&language=en-US';
+		let detailID = window.location.pathname.substring(8) + '?api_key=23df4f4dded45215846668f78df6e8e8&language=en-US';
 		let detailEndpointFinal = detailEndpoint + detailID;
 		
 		

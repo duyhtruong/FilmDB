@@ -43,7 +43,7 @@ class App extends React.Component {
 			<div>
 				<div className='header'>
 					<div className={this.state.headcss}>
-						<Link to='/home'>
+						<Link to='/FilmDB'>
 							<img src={require('./filmdblogo2.png')} className='logo'/>
 						</Link>
 
@@ -55,8 +55,8 @@ class App extends React.Component {
 					
 				<div className='container'>
 					<Switch>
-						<Route exact path='/home' component={Trending}/>
-						<Route path='/home/:movieId' component={MovieDetails}/>
+						<Route exact path='/FilmDB' component={Trending}/>
+						<Route path='/FilmDB/:movieId' component={MovieDetails}/>
 						<Route exact path={`/resultPage/${this.state.testsubmit}`} render={(props)=>
 							<MovieSearch inputProp={this.state.value} {...props} />
 						}/>
