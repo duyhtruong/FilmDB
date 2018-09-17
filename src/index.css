@@ -20,9 +20,7 @@ h1{
 }
 
 .header{
-	
 
-	
 	background-color: #3498db;
 	border-bottom-right-radius: 0.5em;
 	border-bottom-left-radius: 0.5em;
@@ -82,7 +80,7 @@ h1{
 }
 
 .postersearchcss{
-		border-radius: 1.5em;
+	border-radius: 1.5em;
 	box-shadow: 0px 4px 4px 0 rgba(0,0,0,0.1);
     transition: 0.3s;
     max-width: 100%;
@@ -182,14 +180,14 @@ h1{
 
 }
 
-.posterdetail{
-	
-}
-
 .detailchild{
 	padding-left: 3em;
 	padding-top: 2em;
 	max-width: 50%;
+}
+
+.movieoverview{
+	font-size: 0.8em;
 }
 }
 
