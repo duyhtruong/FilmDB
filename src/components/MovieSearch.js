@@ -36,7 +36,7 @@ class MovieSearch extends React.Component{
 						<div key={pic["id"]}>
 					
 						<Link to={'/home/'+pic["id"].toString()}>
-							<img src= {posterEndpoint + posterSize + pic["poster_path"]} className="posters"/>
+							<img src= {posterEndpoint + posterSize + pic["poster_path"]} className="postersearchcss"/>
 						</Link>
 						</div>
 						
@@ -57,9 +57,9 @@ class MovieSearch extends React.Component{
 	render(){
 		return(
 			<div className="searchbody">
-
+			<div className="postersearchparent">
 			{this.state.searchData}
-
+			</div>
 			</div>
 		);
 	}

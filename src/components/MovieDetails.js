@@ -67,34 +67,39 @@ class MovieDetails extends React.Component{
 		
 		return(
 			<div className='display-linebreak detailCards'>
-			<div>
-			{this.state.posterpic}
-			</div>
-			<div>
-			<p className='movieTitle'>
-			{this.state.movietitle}
-			</p>
-			</div>
- 			<div className='starRatings'>
- 			
- 			
- 			<StarRatings
- 				rating={this.state.movierating}
- 				starDimension="1.5em"
- 				starSpacing="0"
- 				starRatedColor="red"
- 				starEmptyColor="grey"
- 				/>
- 				</div>
-			<div>
-			<p className='movieoverview'>
-			{this.state.movieoverview}
-			</p>
-			</div>
-			<div className='genreClass'>
-			{this.state.genres}
-			</div>
 			
+				
+					<div className='detailchild'>
+						{this.state.posterpic}
+					</div>
+					<div className='detailchild'>
+						<div>
+							<div>
+								<p className='movieTitle'>
+								{this.state.movietitle}
+								</p>
+							</div>
+ 							<div className='starRatings'>
+ 			
+ 			
+ 								<StarRatings
+ 								rating={this.state.movierating}
+ 								starDimension="1.5em"
+ 								starSpacing="0"
+ 								starRatedColor="red"
+ 								starEmptyColor="grey"
+ 								/>
+ 							</div>
+							<div>
+								<p className='movieoverview'>
+								{this.state.movieoverview}
+								</p>
+							</div>
+							<div className='genreClass'>
+								{this.state.genres}
+							</div>
+						</div>
+					</div>
 			</div>
 		);
 	}

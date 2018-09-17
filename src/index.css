@@ -10,6 +10,11 @@ body{
 
 }
 
+h1{
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+
 .logo{
 	width: 7em;
 }
@@ -65,6 +70,24 @@ body{
     margin-bottom: 0.5em;
   	
 
+}
+
+.trendingposterscss{
+	border-radius: 1.5em;
+	box-shadow: 0px 4px 4px 0 rgba(0,0,0,0.1);
+    transition: 0.3s;
+    max-width: 100%;
+    margin: auto;
+    margin-bottom: 0.5em;
+}
+
+.postersearchcss{
+		border-radius: 1.5em;
+	box-shadow: 0px 4px 4px 0 rgba(0,0,0,0.1);
+    transition: 0.3s;
+    max-width: 100%;
+    margin: auto;
+    margin-bottom: 0.5em;
 }
 
 .display-linebreak {
@@ -126,6 +149,48 @@ body{
 
 .searchbody{
 
+}
+
+@media only screen  and (min-width : 1224px) {
+.trendingposters{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.trendingposterscss{
+	flex: 1 0 21%;
+	margin: 1em;
+
+}
+
+.postersearchparent{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.postersearchcss{
+	flex: 1 0 21%;
+	margin: 1em;
+}
+
+.detailCards{
+	max-width: 50%;
+	display: flex;
+	margin: auto;
+
+}
+
+.posterdetail{
+	
+}
+
+.detailchild{
+	padding-left: 3em;
+	padding-top: 2em;
+	max-width: 50%;
+}
 }
 
 

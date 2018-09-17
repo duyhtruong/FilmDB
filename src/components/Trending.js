@@ -43,10 +43,10 @@ class Trending extends React.Component{
 			let pictures = data["results"].map((pic,index)=>{
 				return(
 
-						<div key={pic["id"]}>
+						<div key={pic["id"]} >
 					
 						<Link to={'/home/'+pic["id"].toString()}>
-							<img className='posters' src= {posterEndpoint + posterSize + pic["poster_path"]}/>
+							<img className='trendingposterscss' src= {posterEndpoint + posterSize + pic["poster_path"]}/>
 						</Link>
 						</div>
 						
@@ -73,9 +73,9 @@ class Trending extends React.Component{
 			
 			<div>
 			<h1>Popular Films</h1>
-			
+			<div className='trendingposters'>
 			{this.state.trendingData}
-
+			</div>
 
 			</div>
 
